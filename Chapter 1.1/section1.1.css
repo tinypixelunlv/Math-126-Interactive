@@ -1,0 +1,383 @@
+:root {
+  color-scheme: light;
+  --ink: #18212f;
+  --muted: #748096;
+  --line: #e4e9f0;
+  --blue: #4566e8;
+  --blue-soft: #eef1ff;
+  --teal: #2aa798;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(28px, 6vw, 76px) 24px;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 50% 0, #fff 0, #f3f6fa 68%);
+  font-family: "DM Sans", sans-serif;
+}
+
+.section-landing {
+  width: min(100%, 860px);
+  margin: 0 auto;
+}
+
+.section-header {
+  position: relative;
+  margin-bottom: 34px;
+  padding: 8px 0 26px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-header::before {
+  position: absolute;
+  top: 8px;
+  bottom: 27px;
+  left: 0;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--blue), #8b9bff);
+  content: "";
+}
+
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 15px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.kicker-divider {
+  color: #b5becc;
+}
+
+.section-header h1 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(36px, 6vw, 54px);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+}
+
+.section-intro {
+  margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.section-card-grid {
+  display: grid;
+  gap: 13px;
+}
+
+.section-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgb(31 48 76 / 5%);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.section-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-card-link:hover,
+.section-card-link:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 12px 26px rgb(31 48 76 / 9%);
+  outline: none;
+}
+
+.fractions-body {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  padding: clamp(14px, 2.5vh, 28px) clamp(16px, 4vw, 48px);
+}
+
+.fractions-layout {
+  display: flex;
+  width: min(100%, 1100px);
+  height: 100%;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fractions-layout .section-header {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 4px 0 14px 20px;
+}
+
+.fractions-layout .section-header::before {
+  top: 4px;
+  bottom: 14px;
+}
+
+.fractions-layout .section-kicker {
+  margin-bottom: 7px;
+}
+
+.fractions-layout .section-header h1 {
+  font-size: clamp(28px, 4vh, 38px);
+}
+
+.problem-list {
+  display: grid;
+  flex: 1 1 50%;
+  grid-auto-rows: max-content;
+  align-content: start;
+  gap: 10px;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 2px 6px 8px 2px;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.problem-card {
+  display: block;
+  width: 100%;
+  min-height: 72px;
+  padding: 0;
+  appearance: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.problem-card:hover,
+.problem-card[aria-pressed="true"] {
+  border-color: var(--blue);
+  box-shadow: 0 8px 22px rgb(31 48 76 / 9%);
+}
+
+.problem-card:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.problem-card .section-card-header {
+  min-height: 72px;
+  padding: 12px 18px;
+}
+
+.workspace {
+  display: flex;
+  flex: 1 1 50%;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 16px 18px 18px;
+}
+
+.workspace-header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.workspace-eyebrow {
+  margin: 0 0 3px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.workspace-header h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  letter-spacing: -.03em;
+}
+
+.workspace-problem {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.workspace-columns {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-height: 0;
+  padding-top: 14px;
+}
+
+.workspace-column {
+  min-width: 0;
+  overflow: auto;
+}
+
+.workspace-column + .workspace-column {
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.workspace-column h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.workspace-hint {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.workspace-mathfield {
+  display: block;
+  width: 100%;
+  min-height: 74px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  font-size: 20px;
+}
+
+.workspace-mathfield:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-soft);
+}
+
+.step-placeholder-list {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-placeholder-list li {
+  padding: 8px 10px;
+  border: 1px dashed var(--line);
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.section-card-header {
+  display: flex;
+  min-height: 92px;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+}
+
+.section-card-icon {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--blue);
+  background: var(--blue-soft);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.section-card:nth-child(even) .section-card-icon {
+  color: var(--teal);
+  background: #e8f7f4;
+}
+
+.section-card-heading {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.section-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.section-card-chevron {
+  color: #9aa6b7;
+  font-size: 25px;
+  line-height: 1;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 32px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 24px;
+    padding-left: 18px;
+  }
+
+  .section-card-header {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .fractions-body {
+    padding: 12px;
+  }
+
+  .fractions-layout {
+    gap: 10px;
+  }
+
+  .fractions-layout .section-header {
+    padding-bottom: 10px;
+  }
+
+  .problem-card .section-card-header {
+    min-height: 60px;
+    padding: 8px 12px;
+  }
+
+  .workspace {
+    min-height: 230px;
+    padding: 12px;
+  }
+
+  .workspace-columns {
+    gap: 10px;
+  }
+
+  .workspace-column + .workspace-column {
+    padding-left: 10px;
+  }
+
+  .workspace-header h2 {
+    font-size: 17px;
+  }
+}

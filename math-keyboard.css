@@ -1,0 +1,36 @@
+.math-keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+  max-width: 440px;
+  margin-top: 12px;
+}
+
+.math-key {
+  min-height: 38px;
+  padding: 6px 8px;
+  border: 1px solid #d9e0eb;
+  border-radius: 7px;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  transition: border-color .15s, background .15s;
+}
+
+.math-key:hover,
+.math-key:focus-visible {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.math-key-action {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 420px) {
+  .math-keyboard { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractions | Math 126</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="section1.1.css">
+  <script defer src="https://unpkg.com/mathlive@0.111.0"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.8.1/math.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/nerdamer@1.1.13/all.min.js"></script>
+  <script defer src="fractions-math.js"></script>
+</head>
+<body class="fractions-body">
+  <main class="section-landing fractions-layout">
+    <header class="section-header">
+      <p class="section-kicker">Math 126 <span class="kicker-divider">/</span> Chapter 1 <span class="kicker-divider">/</span> 1.1</p>
+      <h1>Fractions</h1>
+    </header>
+
+    <section class="problem-list" aria-label="Problems">
+      <button class="section-card problem-card" type="button" data-problem-id="problem-1" data-problem-number="01" data-problem-title="Problem placeholder" aria-pressed="false">
+        <div class="section-card-header">
+          <span class="section-card-icon" aria-hidden="true">01</span>
+          <span class="section-card-heading">
+            <span class="section-card-title">Problem placeholder</span>
+          </span>
+        </div>
+      </button>
+
+      <button class="section-card problem-card" type="button" data-problem-id="problem-2" data-problem-number="02" data-problem-title="Problem placeholder" aria-pressed="false">
+        <div class="section-card-header">
+          <span class="section-card-icon" aria-hidden="true">02</span>
+          <span class="section-card-heading">
+            <span class="section-card-title">Problem placeholder</span>
+          </span>
+        </div>
+      </button>
+
+      <button class="section-card problem-card" type="button" data-problem-id="problem-3" data-problem-number="03" data-problem-title="Problem placeholder" aria-pressed="false">
+        <div class="section-card-header">
+          <span class="section-card-icon" aria-hidden="true">03</span>
+          <span class="section-card-heading">
+            <span class="section-card-title">Problem placeholder</span>
+          </span>
+        </div>
+      </button>
+    </section>
+
+    <section class="workspace section-card" aria-labelledby="workspace-title">
+      <header class="workspace-header">
+        <div>
+          <p class="workspace-eyebrow">Practice workspace</p>
+          <h2 id="workspace-title">Workspace</h2>
+        </div>
+        <p class="workspace-problem" id="workspace-problem" aria-live="polite">No problem selected</p>
+      </header>
+
+      <div class="workspace-columns">
+        <section class="workspace-column" aria-labelledby="work-title">
+          <h3 id="work-title">Your math work</h3>
+          <p class="workspace-hint" id="workspace-status" aria-live="polite">Select a problem above to load it into your workspace.</p>
+          <math-field class="workspace-mathfield" aria-label="Enter your math work" placeholder="Enter your work"></math-field>
+        </section>
+
+        <section class="workspace-column guided-steps" aria-labelledby="steps-title">
+          <h3 id="steps-title">Guided steps</h3>
+          <p class="workspace-hint">Guided steps for the selected problem will appear here.</p>
+          <ol class="step-placeholder-list" aria-label="Guided step placeholders">
+            <li>Step placeholder</li>
+            <li>Step placeholder</li>
+            <li>Step placeholder</li>
+          </ol>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
