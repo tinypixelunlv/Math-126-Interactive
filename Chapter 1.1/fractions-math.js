@@ -14,7 +14,7 @@
   }
 
   window.fractionsMath = Object.freeze(libraries);
-
+  window.mathVirtualKeyboard.container = document.getElementById('keyboard-container');
   const problemCards = [...document.querySelectorAll(".problem-card")];
   const workspaceProblem = document.querySelector("#workspace-problem");
   const workspaceStatus = document.querySelector("#workspace-status");
